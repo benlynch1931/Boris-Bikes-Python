@@ -16,7 +16,7 @@ I'd like a docking station to release a bike
 | Objects | Messages |
 | --- | --- |
 | Person |  |
-| docking_station | release_bike |
+| DockingStation | release_bike |
 
 <hr />
 
@@ -28,4 +28,28 @@ I'd like to see if a bike is working
 | Objects | Messages |
 | --- | --- |
 | Person |  |
-| bike | is_working? |
+| Bike | is_working? |
+
+<hr />
+
+``` As a member of the public
+So I can return biked I've hired
+I want to dock my bike at the docking station
+``` 
+
+| Objects | Messages |
+| --- | --- |
+| Person |  |
+| DockingStation | dock_bike |
+
+<hr />
+
+```As a member of the public
+So I can decide whether to use the docking station
+I want to see a bike that has been docked
+```
+
+| Objects | Messages |
+| --- | --- |
+| Person |  |
+| DockingStation | list_bikes |
