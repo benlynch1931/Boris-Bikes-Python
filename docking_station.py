@@ -1,7 +1,11 @@
+import bike
+
+
 class DockingStation:
 
     def __init__(self):
-        return None
+        self.Bike = bike.Bike
 
     def release_bike(self):
-        return "Bike released"
+        # return "Bike released"
+        return self.Bike()

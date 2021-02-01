@@ -12,4 +12,6 @@ class TestDockingStation(unittest.TestCase):
 
     def test_release_bike(self):
         docking_station = DockingStation()
-        self.assertEqual(docking_station.release_bike(), "Bike released")
+        bike = docking_station.release_bike()
+        # self.assertEqual(docking_station.release_bike(), "Bike released")
+        self.assertEqual(bike.is_working(), True)
