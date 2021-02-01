@@ -1,5 +1,7 @@
 class Bike:
 
     def __init__(self):
-        return None
-    
+        self.working = True
+
+    def is_working(self):
+        return self.working
