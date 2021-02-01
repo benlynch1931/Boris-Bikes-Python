@@ -1,9 +1,10 @@
 import unittest
-import boris_bikes
+import docking_station
 
-DockingStation = boris_bikes.DockingStation
+DockingStation = docking_station.DockingStation
 
-class TestBorisBikes(unittest.TestCase):
+
+class TestDockingStation(unittest.TestCase):
 
     def test_docking_station_instance(self):
         docking_station = DockingStation()
