@@ -77,3 +77,15 @@ I'd like docking stations not to accept more dikes than their capacity
 | --- | --- |
 | Person |  |
 | DockingStation | capacity = input OR default |
+
+<hr />
+
+``` As a system maintainer,
+So that I can plan the distribution of bikes,
+I want a docking station to have a default capacity of 20 bikes.
+```
+
+| Objects | Messages |
+| --- | --- |
+| Person |  |
+| DockingStation | capacity = input OR default |
