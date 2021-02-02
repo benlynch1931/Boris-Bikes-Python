@@ -23,10 +23,7 @@ class DockingStation:
     def view_bikes(self):
         bike_array = []
         for i in range(0, len(self.docked_bikes)):
-            if self.docked_bikes[i].is_working:
-                condition = "Working"
-            else:
-                condition = "Broken"
+            condition = self.__bike_condition(self.docked_bikes[i])
             bike_array.append('{0} - {1}'.format(self.docked_bikes[i].name(), condition))
         return bike_array
 
@@ -34,6 +31,10 @@ class DockingStation:
         bike = self.docked_bikes[0]
         self.docked_bikes.pop(0)
         return bike
+
+    def __bike_condition(self, docked_bike):
+        condition = "Working" if docked_bike.is_working else "Broken"
+        return condition
 
     def __is_full(self):
         if len(self.docked_bikes) >= 20:
