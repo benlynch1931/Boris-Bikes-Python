@@ -65,3 +65,15 @@ I'd like docking stations not to release bikes when there are none available
 | --- | --- |
 | Person |  |
 | DockingStation | docked_bikes >= 0 |
+
+<hr />
+
+``` As a maintainer of the system,
+So that I can control the distribution of bikes,
+I'd like docking stations not to accept more dikes than their capacity
+```
+
+| Objects | Messages |
+| --- | --- |
+| Person |  |
+| DockingStation | capacity = input OR default |
