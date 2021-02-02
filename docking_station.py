@@ -11,19 +11,15 @@ class DockingStation:
             self.docked_bikes.append(self.Bike(i + 1))
 
     def release_bike(self):
-        if len(self.docked_bikes) <= 0:
-            raise Exception("Error: No bikes available")
-        else:
-            bike = self.docked_bikes[0]
-            self.docked_bikes.pop(0)
-            return bike
+        self.__is_empty()
+        bike = self.docked_bikes[0]
+        self.docked_bikes.pop(0)
+        return bike
 
     def dock_bike(self, bike):
-        if len(self.docked_bikes) >= 20:
-            raise Exception("Error: Docking station as maximum capacity")
-        else:
-            self.docked_bikes.append(bike)
-            return self.docked_bikes
+        self.__is_full()
+        self.docked_bikes.append(bike)
+        return self.docked_bikes
 
     def view_bikes(self):
         bike_array = []
@@ -35,4 +31,15 @@ class DockingStation:
             bike_array.append('{0} - {1}'.format(self.docked_bikes[i].name(), condition))
         return bike_array
 
+    def __is_full(self):
+        if len(self.docked_bikes) >= 20:
+            raise Exception("Error: Docking station as maximum capacity")
+        else:
+            return None
+
+    def __is_empty(self):
+        if len(self.docked_bikes) <= 0:
+            raise Exception("Error: No bikes available")
+        else:
+            return None
 
