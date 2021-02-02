@@ -29,7 +29,7 @@ class TestDockingStation(unittest.TestCase):
         self.assertEqual(docking_station.view_bikes()[10], 'Bike 11 - Working')
         self.assertEqual(docking_station.view_bikes()[19], 'Bike 20 - Working')
 
-    def test_bike_capacity(self):
+    def test_lack_of_bikes(self):
         docking_station = DockingStation()
         for i in range(0, 20):
             docking_station.release_bike()
@@ -37,3 +37,9 @@ class TestDockingStation(unittest.TestCase):
             docking_station.release_bike()
 
         self.assertTrue('Error: No bikes available' in context.exception)
+
+    def test_bike_capacity(self):
+        docking_station = DockingStation()
+        with self.assertRaises(Exception) as context:
+            docking_station.dock_bike(Bike())
+        self.assertTrue('Error: Docking station at maximum capacity')

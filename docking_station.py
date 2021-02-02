@@ -3,9 +3,9 @@ import bike
 
 class DockingStation:
 
-    def __init__(self):
+    def __init__(self, capacity = 20):
         self.docked_bikes = []
-        self.capacity = 20
+        self.capacity = capacity
         self.Bike = bike.Bike
         for i in range(0, 20):
             self.docked_bikes.append(self.Bike(i + 1))
@@ -19,8 +19,11 @@ class DockingStation:
             return bike
 
     def dock_bike(self, bike):
-        self.docked_bikes.append(bike)
-        return self.docked_bikes
+        if len(self.docked_bikes) >= 20:
+            raise Exception("Error: Docking station as maximum capacity")
+        else:
+            self.docked_bikes.append(bike)
+            return self.docked_bikes
 
     def view_bikes(self):
         bike_array = []
