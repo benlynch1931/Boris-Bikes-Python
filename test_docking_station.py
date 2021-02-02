@@ -20,9 +20,20 @@ class TestDockingStation(unittest.TestCase):
 
     def test_dock_bike(self):
         docking_station = DockingStation()
-        self.assertIsInstance(docking_station.dock_bike(Bike(1))[0], Bike)
+        docking_station.release_bike()
+        self.assertIsInstance(docking_station.dock_bike(Bike(1))[19], Bike)
 
     def test_view_bikes(self):
         docking_station = DockingStation()
-        docking_station.dock_bike(Bike(1))
-        self.assertEqual(docking_station.view_bikes(), ['Bike 1 - Working'])
+        self.assertEqual(docking_station.view_bikes()[0], 'Bike 1 - Working')
+        self.assertEqual(docking_station.view_bikes()[10], 'Bike 11 - Working')
+        self.assertEqual(docking_station.view_bikes()[19], 'Bike 20 - Working')
+
+    def test_bike_capacity(self):
+        docking_station = DockingStation()
+        for i in range(0, 20):
+            docking_station.release_bike()
+        with self.assertRaises(Exception) as context:
+            docking_station.release_bike()
+
+        self.assertTrue('Error: No bikes available' in context.exception)
