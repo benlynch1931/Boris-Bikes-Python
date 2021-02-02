@@ -7,7 +7,7 @@ class DockingStation:
         self.docked_bikes = []
         self.capacity = capacity
         self.Bike = bike.Bike
-        for i in range(0, 20):
+        for i in range(0, self.capacity):
             self.docked_bikes.append(self.Bike(i + 1))
 
     def release_bike(self):
@@ -37,7 +37,7 @@ class DockingStation:
         return condition
 
     def __is_full(self):
-        if len(self.docked_bikes) >= 20:
+        if len(self.docked_bikes) >= self.capacity:
             raise Exception("Error: Docking station as maximum capacity")
         else:
             return None
