@@ -89,3 +89,15 @@ I want a docking station to have a default capacity of 20 bikes.
 | --- | --- |
 | Person |  |
 | DockingStation | capacity = input OR default |
+
+<hr />
+
+``` As a system maintainer,
+So that busy areas can be served more effectively,
+I want to be able to specify a larger cpacity when necessary
+```
+
+| Objects | Messages |
+| --- | --- |
+| Person |  |
+| DockingStation | capacity = input OR default |
