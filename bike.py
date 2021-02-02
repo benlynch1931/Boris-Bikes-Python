@@ -1,6 +1,6 @@
 class Bike:
 
-    def __init__(self, number):
+    def __init__(self, number = 0):
         self.working = True
         self.bike_name = 'Bike {0}'.format(number)
 
