@@ -12,8 +12,7 @@ class DockingStation:
 
     def release_bike(self):
         self.__is_empty()
-        bike = self.docked_bikes[0]
-        self.docked_bikes.pop(0)
+        bike = self.__get_bike()
         return bike
 
     def dock_bike(self, bike):
@@ -30,6 +29,11 @@ class DockingStation:
                 condition = "Broken"
             bike_array.append('{0} - {1}'.format(self.docked_bikes[i].name(), condition))
         return bike_array
+
+    def __get_bike(self):
+        bike = self.docked_bikes[0]
+        self.docked_bikes.pop(0)
+        return bike
 
     def __is_full(self):
         if len(self.docked_bikes) >= 20:
